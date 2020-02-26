@@ -5,7 +5,8 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const [teamList, setTeamList] = useState([{name: "Fife Fidsplitter", email: "What's that?", role: "Hole-poker"}]);
+  const [teamList, setTeamList] = useState([{id: 0, name: "Fife Fidsplitter", email: "What's that?", role: "Hole-poker"}]);
+  const [memberToEdit, editMember] = useState([]);
   const addMember = member => {
     const newMember = {
       id: Date.now(),
@@ -17,10 +18,10 @@ function App() {
   }
   return (
     <div className="App">
-      <Form addMember={addMember}/>
+      <Form addMember={addMember} memberToEdit={memberToEdit} editMember={editMember}/>
       <div className="team-list">
         {teamList.map(member => (
-          <Card member={member}/>
+          <Card member={member} editMember={editMember}/>
         ))}
       </div>
     </div>

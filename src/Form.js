@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Form.css";
 
 const Form = props => {
@@ -7,6 +7,11 @@ const Form = props => {
     role: "",
     email: ""
   });
+  useEffect(() => {
+      if (props.memberToEdit){
+          setNewMember(props.memberToEdit);
+      }
+  },[props.memberToEdit])
   const handleChanges = e => {
     setNewMember({ ...newMember, [e.target.name]: e.target.value });
   };
