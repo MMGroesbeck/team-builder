@@ -1,9 +1,9 @@
 import React from 'react';
 import './Card.css';
 
-const Card = ({ member, editMember }) => {
+const Card = ({ member, chooseMember }) => {
     const handleClick = e => {
-        editMember(member);
+        chooseMember(member);
     }
     return (
         <div className="member-card">
