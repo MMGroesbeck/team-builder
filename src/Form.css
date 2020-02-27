@@ -1,0 +1,10 @@
+.form-box {
+    background-color: mintcream;
+    color: black;;
+    width: 50%;
+    padding: 5%;
+    border: 1px dotted blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
